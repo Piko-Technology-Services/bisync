@@ -5,39 +5,45 @@ import Image from "next/image";
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
+      title: "Enterprise CCTV Surveillance Deployment",
       category: "Business Security",
-      type: "first",
+      description:
+        "Design and installation of IP CCTV systems with remote monitoring for a commercial facility.",
       image: "/img/portfolio-1.jpg",
     },
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
+      title: "Fire Detection & Alarm System Installation",
       category: "Fire Detection",
-      type: "second",
+      description:
+        "Integrated fire detection system with automated alert and alarm response infrastructure.",
       image: "/img/portfolio-2.jpg",
     },
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
+      title: "Office Access Control System Setup",
       category: "Access Control",
-      type: "first",
+      description:
+        "Biometric and card-based access control system for employee authentication and tracking.",
       image: "/img/portfolio-3.jpg",
     },
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
+      title: "Industrial Perimeter Security (Electric Fence)",
       category: "Alarm Systems",
-      type: "second",
+      description:
+        "High-voltage electric fencing system deployed for perimeter protection of industrial site.",
       image: "/img/portfolio-4.jpg",
     },
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
+      title: "Multi-Site CCTV Integration",
       category: "CCTV & Video",
-      type: "first",
+      description:
+        "Centralized CCTV monitoring system connecting multiple branches under one dashboard.",
       image: "/img/portfolio-5.jpg",
     },
     {
-      title: "Smart CCTV Security Systems That Fits Your Business",
-      category: "Smart Home",
-      type: "second",
+      title: "Smart Infrastructure Networking Project",
+      category: "Networking",
+      description:
+        "Structured cabling and network setup for scalable and high-performance enterprise connectivity.",
       image: "/img/portfolio-6.jpg",
     },
   ];
@@ -53,15 +59,19 @@ export default function ProjectsSection() {
             style={{ width: 60, height: 2 }}
           />
           <h1 className="display-5">Our Projects</h1>
+          <p className="text-muted mt-3">
+            Delivering secure, scalable, and intelligent ICT & security solutions across Zambia.
+          </p>
         </div>
 
-        {/* FILTER (UI ONLY - no JS filtering yet) */}
+        {/* FILTER UI ONLY */}
         <div className="row mb-4">
           <div className="col-12 text-center">
             <ul className="list-inline" id="portfolio-flters">
               <li className="mx-2 active">All</li>
-              <li className="mx-2">Complete Projects</li>
-              <li className="mx-2">Ongoing Projects</li>
+              <li className="mx-2">Security Systems</li>
+              <li className="mx-2">Networking</li>
+              <li className="mx-2">Access Control</li>
             </ul>
           </div>
         </div>
@@ -70,10 +80,7 @@ export default function ProjectsSection() {
         <div className="row g-4">
 
           {projects.map((item, index) => (
-            <div
-              key={index}
-              className="col-lg-4 col-md-6"
-            >
+            <div key={index} className="col-lg-4 col-md-6">
 
               <div className="portfolio-inner position-relative overflow-hidden border">
 
@@ -81,9 +88,7 @@ export default function ProjectsSection() {
                 <div className="position-relative">
                   <img
                     src={item.image}
-                    alt={item.category}
-                    width={600}
-                    height={400}
+                    alt={item.title}
                     className="img-fluid w-100"
                   />
                 </div>
@@ -106,7 +111,7 @@ export default function ProjectsSection() {
                   </p>
 
                   <h5 className="lh-base mb-3 text-center px-3">
-                    {item.title}
+                    {item.description}
                   </h5>
 
                   <div className="d-flex">

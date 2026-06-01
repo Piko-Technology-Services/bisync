@@ -1,27 +1,26 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 export default function TestimonialSection() {
   const testimonials = [
     {
       image: "/img/testimonial-1.jpg",
-      text: "Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.",
-      name: "Client Name",
-      profession: "Profession",
+      text: "BISYNC Networks delivered a complete CCTV and access control system for our facility. The installation was professional, timely, and the system has significantly improved our security monitoring.",
+      name: "Operations Manager",
+      profession: "Manufacturing Industry",
     },
     {
       image: "/img/testimonial-2.jpg",
-      text: "Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.",
-      name: "Client Name",
-      profession: "Profession",
+      text: "Their team handled our structured cabling and network infrastructure setup with high professionalism. Our office connectivity is now stable and scalable.",
+      name: "IT Administrator",
+      profession: "Corporate Office",
     },
     {
       image: "/img/testimonial-3.jpg",
-      text: "Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.",
-      name: "Client Name",
-      profession: "Profession",
+      text: "We engaged BISYNC for electric fencing and perimeter security. The solution has greatly improved our site protection and overall safety.",
+      name: "Facilities Manager",
+      profession: "Industrial Sector",
     },
   ];
 
@@ -48,10 +47,13 @@ export default function TestimonialSection() {
           className="bg-primary mb-3 mx-auto"
           style={{ width: 60, height: 2 }}
         />
-        <h1 className="display-5">Testimonial</h1>
+        <h1 className="display-5">What Our Clients Say</h1>
+        <p className="text-muted mt-3">
+          Trusted by businesses across Zambia for reliable ICT and security solutions.
+        </p>
       </div>
 
-      {/* CAROUSEL */}
+      {/* TESTIMONIAL */}
       <div className="container text-center">
 
         {/* IMAGE */}
@@ -61,17 +63,17 @@ export default function TestimonialSection() {
             alt={current.name}
             width={100}
             height={100}
-            className="rounded-circle"
+            className="rounded-circle border"
           />
         </div>
 
         {/* TEXT */}
-        <p className="fs-5 mb-4 px-lg-5">
-          {current.text}
+        <p className="fs-5 mb-4 px-lg-5 text-muted">
+          “{current.text}”
         </p>
 
         {/* NAME */}
-        <h4>{current.name}</h4>
+        <h4 className="mb-0">{current.name}</h4>
         <span className="text-primary">{current.profession}</span>
 
         {/* CONTROLS */}

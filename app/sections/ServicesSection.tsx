@@ -1,32 +1,46 @@
 "use client";
 
-import Image from "next/image";
-
 export default function ServicesSection() {
   const services = [
     {
       icon: "/img/icon/icon-6.png",
-      title: "Commercial CCTV System",
-      desc: "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem",
-      delay: "0.1s",
+      title: "IP CCTV Surveillance Systems",
+      desc: "Design, supply, and installation of smart CCTV systems with remote monitoring and recording capabilities for full security visibility.",
     },
     {
       icon: "/img/icon/icon-8.png",
-      title: "Finger Print Access",
-      desc: "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem",
-      delay: "0.3s",
+      title: "Access Control & Time Attendance",
+      desc: "Biometric and card-based systems for secure entry management and accurate employee attendance tracking.",
     },
     {
       icon: "/img/icon/icon-9.png",
-      title: "Fire Detection And Safety",
-      desc: "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem",
-      delay: "0.5s",
+      title: "Fire Detection & Alarm Systems",
+      desc: "Early warning fire detection systems integrated with alarms to protect lives, property, and business operations.",
     },
     {
       icon: "/img/icon/icon-3.png",
-      title: "Smart Home Security",
-      desc: "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem",
-      delay: "0.7s",
+      title: "Structured Cabling & Networking",
+      desc: "Professional installation of copper and fiber network infrastructure for fast, reliable, and scalable connectivity.",
+    },
+    {
+      icon: "/img/icon/icon-4.png",
+      title: "Electric Fencing & Perimeter Security",
+      desc: "High-security perimeter protection systems designed for industrial, commercial, and residential safety.",
+    },
+    {
+      icon: "/img/icon/icon-7.png",
+      title: "Telephone & VoIP Systems",
+      desc: "Modern communication systems including PBX and VoIP solutions for efficient business communication.",
+    },
+    {
+      icon: "/img/icon/icon-5.png",
+      title: "General ICT Solutions",
+      desc: "Computer systems, server setups, IT support, and digital transformation services tailored to business needs.",
+    },
+    {
+      icon: "/img/icon/icon-2.png",
+      title: "Multimedia & Digital Solutions",
+      desc: "Photography, video production, live streaming, and content creation for corporate branding and communication.",
     },
   ];
 
@@ -41,6 +55,9 @@ export default function ServicesSection() {
             style={{ width: 60, height: 2 }}
           />
           <h1 className="display-5">Our Services</h1>
+          <p className="text-muted mt-3">
+            End-to-end ICT, networking, and security solutions designed for modern businesses in Zambia.
+          </p>
         </div>
 
         {/* SERVICES GRID */}
@@ -71,9 +88,9 @@ export default function ServicesSection() {
                 <p className="mb-4 text-muted">{item.desc}</p>
 
                 {/* BUTTON */}
-                <a className="btn btn-link text-primary" href="#">
+                <a className="btn btn-link text-primary" href="#quote">
                   <i className="fa fa-arrow-right me-2" />
-                  Read More
+                  Request Service
                 </a>
 
               </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 export default function QuoteSection() {
@@ -12,14 +11,19 @@ export default function QuoteSection() {
     note: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Quote Request:", form);
-    alert("Quote submitted!");
+
+    // For now just log (later you can connect API/email/DB)
+    console.log("BISYNC Quote Request:", form);
+
+    alert("Thank you! Your request has been received. Our team will contact you shortly.");
   };
 
   return (
@@ -33,17 +37,16 @@ export default function QuoteSection() {
             <div className="position-relative h-100">
               <img
                 src="/img/quote.jpg"
-                alt="Quote"
-                  
-                style={{ objectFit: "cover" }}
-                // priority="true"
+                alt="BISYNC Networks Security Quote"
+                className="img-fluid"
+                style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
             </div>
           </div>
 
           {/* FORM SIDE */}
-          <div className="col-lg-6 py-5">
-            <div className="p-lg-5 pe-lg-0">
+          <div className="col-lg-6 py-5 px-lg-5 pe-lg-5">
+            <div className="p-lg-5 pe-lg-0 px-lg-0">
 
               {/* HEADER */}
               <div
@@ -51,16 +54,18 @@ export default function QuoteSection() {
                 style={{ width: 60, height: 2 }}
               />
 
-              <h1 className="display-5 mb-5">Free Quote</h1>
+              <h1 className="display-5 mb-3">
+                Request a Free Consultation
+              </h1>
 
               <p className="mb-4 pb-2 text-muted">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos.
+                Tell us about your project — whether it’s CCTV installation, networking,
+                access control, or complete security infrastructure. Our team will get back
+                to you with a tailored solution and quotation.
               </p>
 
               {/* FORM */}
               <form onSubmit={handleSubmit}>
-
                 <div className="row g-3">
 
                   {/* NAME */}
@@ -71,8 +76,9 @@ export default function QuoteSection() {
                       value={form.name}
                       onChange={handleChange}
                       className="form-control border-0"
-                      placeholder="Your Name"
+                      placeholder="Full Name"
                       style={{ height: 55 }}
+                      required
                     />
                   </div>
 
@@ -84,8 +90,9 @@ export default function QuoteSection() {
                       value={form.email}
                       onChange={handleChange}
                       className="form-control border-0"
-                      placeholder="Your Email"
+                      placeholder="Email Address"
                       style={{ height: 55 }}
+                      required
                     />
                   </div>
 
@@ -97,7 +104,7 @@ export default function QuoteSection() {
                       value={form.mobile}
                       onChange={handleChange}
                       className="form-control border-0"
-                      placeholder="Your Mobile"
+                      placeholder="Phone Number"
                       style={{ height: 55 }}
                     />
                   </div>
@@ -110,12 +117,16 @@ export default function QuoteSection() {
                       onChange={handleChange}
                       className="form-select border-0"
                       style={{ height: 55 }}
+                      required
                     >
-                      <option value="">Select A Service</option>
-                      <option value="cctv">CCTV Installation</option>
-                      <option value="access">Access Control</option>
-                      <option value="fire">Fire Detection</option>
-                      <option value="smart">Smart Home</option>
+                      <option value="">Select Service</option>
+                      <option value="cctv">IP CCTV Surveillance Systems</option>
+                      <option value="access">Access Control & Time Attendance</option>
+                      <option value="networking">Networking & Structured Cabling</option>
+                      <option value="electric">Electric Fencing & Perimeter Security</option>
+                      <option value="voip">Telephone / VoIP Systems</option>
+                      <option value="multimedia">Multimedia & Digital Solutions</option>
+                      <option value="general">General ICT Solutions</option>
                     </select>
                   </div>
 
@@ -126,7 +137,7 @@ export default function QuoteSection() {
                       value={form.note}
                       onChange={handleChange}
                       className="form-control border-0"
-                      placeholder="Special Note"
+                      placeholder="Describe your project requirements..."
                       rows={4}
                     />
                   </div>
@@ -137,12 +148,11 @@ export default function QuoteSection() {
                       type="submit"
                       className="btn btn-primary w-100 py-3"
                     >
-                      Get A Free Quote
+                      Request a Quote
                     </button>
                   </div>
 
                 </div>
-
               </form>
 
             </div>

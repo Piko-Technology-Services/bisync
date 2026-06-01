@@ -33,7 +33,7 @@ export default function FeatureSection() {
         <div className="row g-0 mx-lg-0 align-items-center">
 
           {/* LEFT CONTENT */}
-          <div className="col-lg-6 py-5">
+          <div className="col-lg-6 py-5 px-lg-5 pe-lg-0">
             <div className="p-lg-5 ps-lg-0">
 
               {/* LINE */}
