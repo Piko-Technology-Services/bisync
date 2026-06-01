@@ -11,9 +11,53 @@ import "./css/bootstrap.min.css";
 import "./css/style.css";
 import Footer from "./components/Footer";
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "BISYNC Networks",
-  description: "ICT & Security Solutions",
+  title: "BISYNC Networks & Security (Z) Limited",
+  description:
+    "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia. CCTV systems, access control, structured cabling, and IT infrastructure services.",
+
+  keywords: [
+    "CCTV Zambia",
+    "ICT Solutions Zambia",
+    "Security Systems Zambia",
+    "Networking Company Zambia",
+    "Access Control Zambia",
+    "Structured Cabling Ndola",
+    "BISYNC Networks",
+  ],
+
+  metadataBase: new URL("https://www.bisyncnetworks.com"), // 🔴 CHANGE THIS
+
+  openGraph: {
+    title: "BISYNC Networks & Security (Z) Limited",
+    description:
+      "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia.",
+    url: "https://www.bisyncnetworks.com/",
+    siteName: "BISYNC Networks & Security (Z) Limited",
+    images: [
+      {
+        url: "/logo.png", // 🔴 create this image in /public/img/
+        width: 1200,
+        height: 630,
+        alt: "BISYNC Networks & Security",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "BISYNC Networks & Security (Z) Limited",
+    description:
+      "ICT, Networking & Security Solutions in Zambia",
+    images: ["/logo.png"],
+  },
+
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
