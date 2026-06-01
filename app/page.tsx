@@ -10,6 +10,7 @@ import FeatureSection from "./sections/FeatureSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import QuoteSection from "./sections/QuoteSection";
 import TestimonialSection from "./sections/TestimonialSection";
+import ClientsSection from "./sections/ClientsSection";
 
 
 export default function Home() {
@@ -174,7 +175,8 @@ export default function Home() {
       <FeatureSection />
       <ProjectsSection />
       <QuoteSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
+      <ClientsSection />
 
 
 
