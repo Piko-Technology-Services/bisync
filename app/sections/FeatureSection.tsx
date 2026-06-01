@@ -63,7 +63,7 @@ export default function FeatureSection() {
                         className="d-flex align-items-center justify-content-center bg-white rounded-circle"
                         style={{ width: 64, height: 64 }}
                       >
-                        <Image
+                        <img
                           src={item.icon}
                           alt={item.top}
                           width={32}
@@ -94,12 +94,11 @@ export default function FeatureSection() {
           {/* RIGHT IMAGE */}
           <div className="col-lg-6 pe-lg-0" style={{ minHeight: "400px" }}>
             <div className="position-relative h-100">
-              <Image
+              <img
                 src="/img/feature.jpg"
                 alt="Feature"
-                fill
+                className="img-fluid"
                 style={{ objectFit: "cover" }}
-                priority
               />
             </div>
           </div>

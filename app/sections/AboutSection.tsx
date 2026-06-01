@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function AboutSection() {
   const stats = [
@@ -26,12 +26,11 @@ export default function AboutSection() {
           {/* LEFT IMAGE */}
           <div className="col-lg-6 ps-lg-0" style={{ minHeight: "400px" }}>
             <div className="position-relative h-100">
-              <Image
+              <img
                 src="/img/about.jpg"
                 alt="About"
-                fill
                 style={{ objectFit: "cover" }}
-                priority
+                
               />
             </div>
           </div>
@@ -66,7 +65,7 @@ export default function AboutSection() {
                         className="d-flex align-items-center justify-content-center bg-white rounded-circle"
                         style={{ width: 64, height: 64 }}
                       >
-                        <Image
+                        <img
                           src={item.icon}
                           alt={item.label}
                           width={32}

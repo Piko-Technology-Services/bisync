@@ -79,7 +79,7 @@ export default function ProjectsSection() {
 
                 {/* IMAGE */}
                 <div className="position-relative">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.category}
                     width={600}

@@ -56,7 +56,7 @@ export default function TestimonialSection() {
 
         {/* IMAGE */}
         <div className="mb-4 d-flex justify-content-center">
-          <Image
+          <img
             src={current.image}
             alt={current.name}
             width={100}

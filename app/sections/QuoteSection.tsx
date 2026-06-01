@@ -31,12 +31,12 @@ export default function QuoteSection() {
           {/* IMAGE SIDE */}
           <div className="col-lg-6 ps-lg-0" style={{ minHeight: "400px" }}>
             <div className="position-relative h-100">
-              <Image
+              <img
                 src="/img/quote.jpg"
                 alt="Quote"
-                fill
+                  
                 style={{ objectFit: "cover" }}
-                priority
+                // priority="true"
               />
             </div>
           </div>

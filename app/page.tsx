@@ -46,13 +46,13 @@ export default function Home() {
   return (
     <>
 
-     {/* <!-- Spinner Start --> */}
-    <div id="spinner" className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      {/* <!-- Spinner Start --> */}
+      <div id="spinner" className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
-            <span className="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
-    </div>
-    {/* <!-- Spinner End --> */}
+      </div>
+      {/* <!-- Spinner End --> */}
 
 
       <Navbar />
@@ -60,7 +60,7 @@ export default function Home() {
       {/* HERO WRAPPER (KEY FIX) */}
       <div className="hero-wrapper">
 
-        
+
 
         {/* 🎠 CAROUSEL (ABOVE BACKGROUND) */}
         <div className="hero-content">
@@ -71,7 +71,7 @@ export default function Home() {
               <img src="/img/carousel-1.jpg" alt="slide 1" />
 
               {/* 🌐 BACKGROUND (BEHIND EVERYTHING) */}
-        <NetworkBackground />
+              <NetworkBackground />
 
               <div className="container">
                 <div className="row justify-content-center">
@@ -90,8 +90,8 @@ export default function Home() {
             {/* SLIDE 2 */}
             <div className="owl-carousel-item">
               <img src="/img/carousel-2.jpg" alt="slide 2" />
-{/* 🌐 BACKGROUND (BEHIND EVERYTHING) */}
-        <NetworkBackground />
+              {/* 🌐 BACKGROUND (BEHIND EVERYTHING) */}
+              <NetworkBackground />
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-12 col-lg-8 text-center">
@@ -106,8 +106,8 @@ export default function Home() {
             {/* SLIDE 3 */}
             <div className="owl-carousel-item">
               <img src="/img/carousel-3.jpg" alt="slide 3" />
-{/* 🌐 BACKGROUND (BEHIND EVERYTHING) */}
-        <NetworkBackground />
+              {/* 🌐 BACKGROUND (BEHIND EVERYTHING) */}
+              <NetworkBackground />
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-12 col-lg-8 text-center">
@@ -124,14 +124,14 @@ export default function Home() {
       </div>
 
 
-      
-      <FactsSection/>
-      <AboutSection/>
-      <ServicesSection/>
-      <FeatureSection/>
-      <ProjectsSection/>
-      <QuoteSection/>
-      <TestimonialSection/>
+
+      <FactsSection />
+      <AboutSection />
+      <ServicesSection />
+      <FeatureSection />
+      <ProjectsSection />
+      <QuoteSection />
+      <TestimonialSection />
 
 
 

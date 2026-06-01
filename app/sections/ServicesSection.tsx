@@ -56,7 +56,7 @@ export default function ServicesSection() {
                   className="d-flex align-items-center justify-content-center bg-light rounded-circle mb-4 mx-auto"
                   style={{ width: 64, height: 64 }}
                 >
-                  <Image
+                  <img
                     src={item.icon}
                     alt={item.title}
                     width={32}

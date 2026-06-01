@@ -48,7 +48,7 @@ export default function FactsSection() {
                       background: "#000",
                     }}
                   >
-                    <Image
+                    <img
                       src={item.icon}
                       alt={item.title}
                       width={32}
