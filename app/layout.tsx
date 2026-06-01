@@ -52,11 +52,11 @@ export const metadata: Metadata = {
     title: "BISYNC Networks & Security (Z) Limited",
     description:
       "ICT, Networking & Security Solutions in Zambia",
-    images: ["/logo.png"],
+    images: ["/img/logo.png"],
   },
 
   icons: {
-    icon: "/logo.png",
+    icon: "/img/logo.png",
   },
 };
 
