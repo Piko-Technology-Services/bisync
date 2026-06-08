@@ -69,7 +69,7 @@ export default function Home() {
 
             {/* SLIDE 1 - HERO INTRO */}
             <div className="owl-carousel-item">
-              <img src="/img/carousel-1.jpg" alt="slide 1" />
+              <img src="/images/cabling1.jfif" alt="slide 1" />
 
               <NetworkBackground />
 
@@ -109,7 +109,7 @@ export default function Home() {
 
             {/* SLIDE 2 - SERVICES OVERVIEW */}
             <div className="owl-carousel-item">
-              <img src="/img/carousel-2.jpg" alt="slide 2" />
+              <img src="/images/computers.jpg" alt="slide 2" />
 
               <NetworkBackground />
 

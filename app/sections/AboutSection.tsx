@@ -25,7 +25,7 @@ export default function AboutSection() {
           <div className="col-lg-6 ps-lg-0" style={{ minHeight: "400px" }}>
             <div className="position-relative h-100">
               <img
-                src="/img/about.jpg"
+                src="/images/network.jpg"
                 alt="About BISYNC Networks"
                 className="img-fluid"
                 style={{ objectFit: "cover", width: "100%", height: "100%" }}
