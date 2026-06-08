@@ -88,9 +88,9 @@ export default function ServicesSection() {
                 <p className="mb-4 text-muted">{item.desc}</p>
 
                 {/* BUTTON */}
-                <a className="btn btn-link text-primary" href="#quote">
+                <a className="btn btn-link text-white" href="#quote">
                   <i className="fa fa-arrow-right me-2" />
-                  Request Service
+                  Ask Quote
                 </a>
 
               </div>
