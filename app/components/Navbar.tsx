@@ -61,7 +61,7 @@ export default function Navbar() {
                 alt="BISYNC Networks"
                 style={{ height: 40, width: "auto" }}
             />
-            BISYNC Networks & Security
+            
           </h6>
         </Link>
 
