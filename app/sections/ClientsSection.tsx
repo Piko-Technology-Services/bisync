@@ -13,6 +13,8 @@ export default function ClientsSection() {
     "Joe's Earthworks & Mining Limited",
     "Strongpak Limited",
     "Mansa Sugar Limited",
+    "PRINCIPAL FREIGHT LIMITED",
+    "TRADESMART LIMITED",
   ];
 
   return (

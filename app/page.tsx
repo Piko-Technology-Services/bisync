@@ -198,7 +198,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <FeatureSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       <QuoteSection />
       {/* <TestimonialSection /> */}
       <ClientsSection />
