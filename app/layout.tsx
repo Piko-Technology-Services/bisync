@@ -106,7 +106,27 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Favicon */}
-        <link rel="icon" href="/img/logo.png" />
+        <link rel="icon" href="logo.png" />
+
+        <title>BISYNC Networks & Security (Z) Limited</title>
+
+<meta name="description" content="Leading ICT, Networking and Security Systems provider in Zambia. Structured Cabling, CCTV, Access Control, Electric Fencing, VoIP, and IT Infrastructure Solutions." />
+
+<meta name="keywords" content="ICT Zambia, CCTV Installation Zambia, Structured Cabling Zambia, Access Control Zambia, Networking Zambia, Electric Fencing Zambia, BISYNC Networks" />
+
+<meta name="author" content="BISYNC Networks & Security (Z) Limited" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property="og:type" content="website" />
+<meta property="og:title" content="BISYNC Networks & Security (Z) Limited" />
+<meta property="og:description" content="Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia." />
+<meta property="og:url" content="https://bisync.vercel.app" />
+<meta property="og:site_name" content="BISYNC Networks & Security" />
+<meta property="og:image" content="https://bisync.vercel.app/logo.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_ZM" />
 
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
