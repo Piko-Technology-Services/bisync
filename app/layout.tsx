@@ -76,7 +76,7 @@ openGraph: {
     "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia.",
   images: [
     {
-      url: "https://bisync.vercel.app/images/og-image.jpg",
+      url: "https://bisync.vercel.app/logo.png",
       width: 1200,
       height: 630,
       alt: "BISYNC Networks & Security",
@@ -86,7 +86,7 @@ openGraph: {
 
 twitter: {
   card: "summary_large_image",
-  images: ["https://bisync.vercel.app/images/og-image.jpg"],
+  images: ["https://bisync.vercel.app/logo.png"],
 },
 
 
