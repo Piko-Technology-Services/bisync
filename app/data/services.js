@@ -64,7 +64,7 @@ We design, supply, and install scalable CCTV solutions for offices, factories, w
 
   {
     slug: "access-control",
-    icon: "bi-fingerprint",
+    icon: "bi-lock-fill",
     title: "Access Control & Time Attendance",
     shortDescription:
       "Biometric and smart access systems for secure entry and attendance tracking.",

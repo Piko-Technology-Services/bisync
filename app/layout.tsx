@@ -11,40 +11,86 @@ import "./css/bootstrap.min.css";
 import "./css/style.css";
 import Footer from "./components/Footer";
 
-import type { Metadata } from "next";
-
 export const metadata: Metadata = {
-  title: "BISYNC Networks & Security (Z) Limited",
+  metadataBase: new URL("https://www.bisyncnetworks.com"),
+
+  title: {
+    default: "BISYNC Networks & Security (Z) Limited",
+    template: "%s | BISYNC Networks & Security",
+  },
+
   description:
-    "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia. CCTV systems, access control, structured cabling, and IT infrastructure services.",
+    "Leading ICT, Networking and Security Systems provider in Zambia. Structured Cabling, CCTV, Access Control, Electric Fencing, VoIP, Multimedia Production and IT Infrastructure Solutions.",
+
+  applicationName: "BISYNC Networks & Security",
 
   keywords: [
-    "CCTV Zambia",
-    "ICT Solutions Zambia",
+    "ICT Zambia",
     "Security Systems Zambia",
-    "Networking Company Zambia",
+    "CCTV Installation Zambia",
+    "Structured Cabling Zambia",
+    "Fiber Installation Zambia",
     "Access Control Zambia",
-    "Structured Cabling Ndola",
+    "Electric Fencing Zambia",
+    "VoIP Zambia",
+    "Network Installation Zambia",
     "BISYNC Networks",
+    "Ndola Security Systems",
+    "Zambia CCTV Company",
   ],
 
-  metadataBase: new URL("https://www.bisyncnetworks.com"), // 🔴 CHANGE THIS
+  authors: [
+    {
+      name: "BISYNC Networks & Security (Z) Limited",
+    },
+  ],
+
+  creator: "BISYNC Networks & Security (Z) Limited",
+
+  publisher: "BISYNC Networks & Security (Z) Limited",
+
+  category: "Technology",
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      maxVideoPreview: -1,
+      maxImagePreview: "large",
+      maxSnippet: -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://www.bisyncnetworks.com",
+  },
 
   openGraph: {
     title: "BISYNC Networks & Security (Z) Limited",
     description:
       "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia.",
-    url: "https://www.bisyncnetworks.com/",
-    siteName: "BISYNC Networks & Security (Z) Limited",
+
+    url: "https://www.bisyncnetworks.com",
+
+    siteName: "BISYNC Networks & Security",
+
+    locale: "en_ZM",
+
+    type: "website",
+
     images: [
       {
-        url: "/logo.png", // 🔴 create this image in /public/img/
+        url: "/img/logo.png",
         width: 1200,
         height: 630,
         alt: "BISYNC Networks & Security",
       },
     ],
-    type: "website",
   },
 
   twitter: {
@@ -52,11 +98,14 @@ export const metadata: Metadata = {
     title: "BISYNC Networks & Security (Z) Limited",
     description:
       "ICT, Networking & Security Solutions in Zambia",
+
     images: ["/img/logo.png"],
   },
 
   icons: {
-    icon: "/img/logo.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
