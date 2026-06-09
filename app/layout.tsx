@@ -89,19 +89,11 @@ twitter: {
   images: ["https://bisync.vercel.app/images/og-image.jpg"],
 },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "BISYNC Networks & Security (Z) Limited",
-    description:
-      "ICT, Networking & Security Solutions in Zambia",
-
-    images: ["/img/logo.png"],
-  },
 
   icons: {
-    icon: "/img/logo.png",
-    shortcut: "/img/logo.png",
-    apple: "/img/logo.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
