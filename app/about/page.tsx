@@ -1,6 +1,11 @@
+import Navbar from "../components/Navbar";  
+
 export default function AboutPage() {
   return (
     <>
+
+    <Navbar  />
+
       <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div className="container about px-lg-0">
           <div className="row g-0 mx-lg-0">
@@ -12,7 +17,7 @@ export default function AboutPage() {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="/img/about-security.jpg"
+                  src="/images/network.jpg"
                   alt="About Us"
                   style={{ objectFit: "cover" }}
                 />
@@ -135,6 +140,7 @@ export default function AboutPage() {
 
         </div>
       </div>
+
     </>
   );
 }
