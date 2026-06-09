@@ -70,28 +70,24 @@ export const metadata: Metadata = {
     canonical: "https://www.bisyncnetworks.com",
   },
 
-  openGraph: {
-    title: "BISYNC Networks & Security (Z) Limited",
-    description:
-      "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia.",
+openGraph: {
+  title: "BISYNC Networks & Security (Z) Limited",
+  description:
+    "Reliable ICT, Networking & Security Solutions for Modern Businesses in Zambia.",
+  images: [
+    {
+      url: "https://bisync.vercel.app/images/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "BISYNC Networks & Security",
+    },
+  ],
+},
 
-    url: "https://www.bisyncnetworks.com",
-
-    siteName: "BISYNC Networks & Security",
-
-    locale: "en_ZM",
-
-    type: "website",
-
-    images: [
-      {
-        url: "/img/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "BISYNC Networks & Security",
-      },
-    ],
-  },
+twitter: {
+  card: "summary_large_image",
+  images: ["https://bisync.vercel.app/images/og-image.jpg"],
+},
 
   twitter: {
     card: "summary_large_image",
