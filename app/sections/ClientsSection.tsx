@@ -16,7 +16,7 @@ export default function ClientsSection() {
   ];
 
   return (
-    <div className="container-xxl py-5 bg-light">
+    <div className="container-xxl py-5 bg-light" id="clients">
       <div className="container">
 
         {/* TITLE */}

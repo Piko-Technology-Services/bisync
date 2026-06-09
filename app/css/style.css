@@ -642,4 +642,14 @@
 
 .hover-overlay {
   transition: all 0.3s ease;
+
+
+}
+
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
 }

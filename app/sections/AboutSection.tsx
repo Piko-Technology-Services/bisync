@@ -17,7 +17,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="about">
       <div className="container about px-lg-0">
         <div className="row g-0 mx-lg-0 align-items-center">
 

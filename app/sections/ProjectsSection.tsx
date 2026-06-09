@@ -49,7 +49,7 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <div className="container-xxl py-5">
+    <div className="container-xxl py-5" id="projects">
       <div className="container">
 
         {/* SECTION TITLE */}

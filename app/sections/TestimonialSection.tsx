@@ -39,7 +39,7 @@ export default function TestimonialSection() {
   const current = testimonials[index];
 
   return (
-    <div className="container-xxl py-5">
+    <div className="container-xxl py-5" id="testimonial">
 
       {/* TITLE */}
       <div className="text-center mb-5">

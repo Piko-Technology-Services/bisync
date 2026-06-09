@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { services } from "../data/services";
 
 export default function Navbar() {
   return (
@@ -57,11 +58,11 @@ export default function Navbar() {
         <Link href="/" className="navbar-brand d-flex align-items-center">
           <h6 className="m-0 text-primary">
             <img
-                src="/logo.png"
-                alt="BISYNC Networks"
-                style={{ height: 40, width: "auto" }}
+              src="/logo.png"
+              alt="BISYNC Networks"
+              style={{ height: 40, width: "auto" }}
             />
-            
+
           </h6>
         </Link>
 
@@ -84,18 +85,6 @@ export default function Navbar() {
               Home
             </Link>
 
-            <Link href="#about" className="nav-item nav-link">
-              About
-            </Link>
-
-            <Link href="#services" className="nav-item nav-link">
-              Services
-            </Link>
-
-            <Link href="#projects" className="nav-item nav-link">
-              Projects
-            </Link>
-
             <div className="nav-item dropdown">
 
               <a
@@ -103,16 +92,20 @@ export default function Navbar() {
                 className="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
               >
-                Pages
+                About us
               </a>
 
               <div className="dropdown-menu rounded-0 rounded-bottom m-0">
 
-                <Link href="#feature" className="dropdown-item">
-                  Features
+                <Link href="/about" className="dropdown-item">
+                  About Us
                 </Link>
 
-                <Link href="#quote" className="dropdown-item">
+                <Link href="/certifications" className="dropdown-item">
+                  Our Certifications
+                </Link>
+
+                <Link href="/quote" className="dropdown-item">
                   Request Quote
                 </Link>
 
@@ -120,15 +113,43 @@ export default function Navbar() {
                   Our Clients
                 </Link>
 
-                <Link href="#testimonial" className="dropdown-item">
-                  Testimonials
-                </Link>
-
               </div>
 
             </div>
 
-            <Link href="#contact" className="nav-item nav-link">
+            <div className="nav-item dropdown">
+              <a
+                href="#"
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                Services
+              </a>
+
+              <div className="dropdown-menu fade-up m-0">
+                <Link href="/services" className="dropdown-item">
+                  All Services
+                </Link>
+
+                {services.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="dropdown-item"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/projects" className="nav-item nav-link">
+              Projects
+            </Link>
+
+
+
+            <Link href="/contact" className="nav-item nav-link">
               Contact
             </Link>
 
