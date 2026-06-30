@@ -832,3 +832,170 @@
             animation-duration: 0.6s;
           }
         }
+
+
+
+
+        
+        :root {
+          --bs-orange: #f7941d;
+          --bs-orange-deep: #e07b00;
+        }
+
+        /* ============ CAROUSEL SLIDE TRANSITIONS ============ */
+        /* Owl Carousel toggles these classes on the outgoing/incoming
+           .owl-carousel-item during a transition because of
+           animateOut / animateIn above. */
+
+        .header-carousel .owl-carousel-item {
+          backface-visibility: hidden;
+        }
+
+        @keyframes bsFadeZoomIn {
+          from {
+            opacity: 0;
+            transform: scale(1.08);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes bsFadeZoomOut {
+          from {
+            opacity: 1;
+            transform: scale(1);
+          }
+          to {
+            opacity: 0;
+            transform: scale(0.96);
+          }
+        }
+
+        .bsFadeZoomIn {
+          animation: bsFadeZoomIn 1s ease both;
+        }
+        .bsFadeZoomOut {
+          animation: bsFadeZoomOut 1s ease both;
+        }
+
+        /* subtle continuous drift on the hero text so each slide feels alive
+           while it's showing, not just during the swap */
+        .header-carousel .owl-carousel-item.active .container h1,
+        .header-carousel .owl-carousel-item.active .container p {
+          animation: bsRiseIn 0.9s ease both;
+        }
+        .header-carousel .owl-carousel-item.active .container p:nth-of-type(2) {
+          animation-delay: 0.15s;
+        }
+        .header-carousel .owl-carousel-item.active .container .d-flex {
+          animation: bsRiseIn 0.9s ease both;
+          animation-delay: 0.3s;
+        }
+        @keyframes bsRiseIn {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Owl dots: make the active dot feel more alive */
+        .header-carousel .owl-dots .owl-dot span {
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .header-carousel .owl-dots .owl-dot.active span {
+          background: var(--bs-orange) !important;
+          transform: scale(1.3);
+        }
+
+        /* ============ WATER-FILL HOVER BUTTONS ============ */
+        .bs-water-btn {
+          position: relative;
+          overflow: hidden;
+          isolation: isolate;
+          z-index: 0;
+          transition: color 0.4s ease, border-color 0.3s ease;
+        }
+
+        .bs-water-btn span {
+          position: relative;
+          z-index: 2;
+        }
+
+        /* the rising liquid layer */
+        .bs-water-btn::before {
+          content: "";
+          position: absolute;
+          left: -5%;
+          bottom: 0;
+          width: 110%;
+          height: 0%;
+          background: var(--bs-orange-deep);
+          border-radius: 45% 45% 0 0 / 12% 12% 0 0;
+          transition: height 0.5s cubic-bezier(0.45, 0, 0.2, 1);
+          z-index: 1;
+        }
+
+        /* a second wave layer, slightly offset, for a ripple feel */
+        .bs-water-btn::after {
+          content: "";
+          position: absolute;
+          left: -5%;
+          bottom: 0;
+          width: 110%;
+          height: 0%;
+          background: var(--bs-orange);
+          border-radius: 40% 40% 0 0 / 16% 16% 0 0;
+          transition: height 0.6s cubic-bezier(0.45, 0, 0.2, 1) 0.05s;
+          z-index: 1;
+          opacity: 0.85;
+        }
+
+        .bs-water-btn:hover::before {
+          height: 110%;
+        }
+        .bs-water-btn:hover::after {
+          height: 95%;
+        }
+
+        .bs-water-btn:hover {
+          color: #ffffff !important;
+        }
+
+        /* primary (already orange) button: water rises in deep orange/black tint */
+        .btn-primary.bs-water-btn::before {
+          background: #111111;
+        }
+        .btn-primary.bs-water-btn::after {
+          background: var(--bs-orange-deep);
+        }
+
+        /* outline-light variant on the hero (white outline, transparent bg) */
+        .bs-water-btn-outline {
+          border-color: #fff;
+        }
+        .bs-water-btn-outline:hover {
+          border-color: var(--bs-orange);
+        }
+
+        /* light button variant */
+        .bs-water-btn-light:hover {
+          color: #111 !important;
+        }
+        .bs-water-btn-light::before,
+        .bs-water-btn-light::after {
+          background: var(--bs-orange);
+          opacity: 0.9;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .bsFadeZoomIn,
+          .bsFadeZoomOut,
+          .header-carousel .owl-carousel-item.active .container h1,
+          .header-carousel .owl-carousel-item.active .container p,
+          .header-carousel .owl-carousel-item.active .container .d-flex,
+          .bs-water-btn::before,
+          .bs-water-btn::after {
+            animation: none !important;
+            transition: none !important;
+          }
+        }

@@ -31,8 +31,11 @@ export default function Home() {
           items: 1,
           loop: true,
           autoplay: true,
-          autoplayTimeout: 5000,
-          smartSpeed: 1000,
+          autoplayTimeout: 3000,       // move to next slide every 2s
+          autoplayHoverPause: true,
+          smartSpeed: 1000,            // speed of the transition itself
+          animateOut: "bsFadeZoomOut", // custom exit animation
+          animateIn: "bsFadeZoomIn",   // custom enter animation
           dots: true,
           nav: false,
         });
@@ -97,14 +100,14 @@ export default function Home() {
             </p>
 
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#quote" className="btn btn-primary px-4 py-2">
-                Request a Quote
+              <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
+                <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2">
-                Explore Our Services
+              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+                <span>Explore Our Services</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2">
-                About Us
+              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>About Us</span>
               </a>
             </div>
 
@@ -136,14 +139,14 @@ export default function Home() {
             </p>
 
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#quote" className="btn btn-primary px-4 py-2">
-                Request a Quote
+              <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
+                <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2">
-                Explore Our Services
+              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+                <span>Explore Our Services</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2">
-                About Us
+              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>About Us</span>
               </a>
             </div>
 
@@ -175,14 +178,14 @@ export default function Home() {
             </p>
 
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#quote" className="btn btn-primary px-4 py-2">
-                Request a Quote
+              <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
+                <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2">
-                Explore Our Services
+              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+                <span>Explore Our Services</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2">
-                About Us
+              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>About Us</span>
               </a>
             </div>
 
@@ -208,7 +211,6 @@ export default function Home() {
       <QuoteSection />
       {/* <TestimonialSection /> */}
       <ClientsSection />
-
 
 
     </>
