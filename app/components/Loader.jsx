@@ -29,7 +29,7 @@ export default function Loader({ onFinish, duration = 2200 }) {
     const fillTimer = setTimeout(() => setHide(true), duration);
     const finishTimer = setTimeout(() => {
       if (onFinish) onFinish();
-    }, duration + 500); // matches the fade-out transition below
+    }, duration + 1500); // matches the fade-out transition below
 
     return () => {
       clearTimeout(fillTimer);
@@ -46,7 +46,7 @@ export default function Loader({ onFinish, duration = 2200 }) {
     >
       <div className="bs-loader-tank">
         {/* Logo on top, water rises behind/under it */}
-        <img src="/images/logo.png" alt="BISYNC" className="bs-loader-logo" />
+        <img src="/logo.png" alt="BISYNC" className="bs-loader-logo" />
 
         <div className="bs-loader-water">
           <svg
