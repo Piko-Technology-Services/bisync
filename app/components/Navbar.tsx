@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { services } from "../data/services";
 import { useLoader } from "./LoaderProvider";
+import NavNetworkbackground from "./NavNetworkbackground";
 
 export default function Navbar() {
 
@@ -57,6 +58,7 @@ export default function Navbar() {
 
       {/* NAVBAR */}
       <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+        <NavNetworkbackground />
 
         {/* BRAND */}
         <Link href="/" className="navbar-brand d-flex align-items-center" onClick={showLoader}>
@@ -86,80 +88,260 @@ export default function Navbar() {
 
           <div className="navbar-nav ms-auto py-4 py-lg-0">
 
-            <Link href="/" className="nav-item nav-link active" onClick={showLoader}>
-              Home
-            </Link>
+  {/* HOME */}
+  <Link href="/" className="nav-item nav-link active" onClick={showLoader}>
+    Home
+  </Link>
 
-            <div className="nav-item dropdown">
+  {/* OUR COMPANY */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Our Company
+    </a>
 
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                About us
-              </a>
+    <div className="dropdown-menu rounded-0 rounded-bottom m-0">
 
-              <div className="dropdown-menu rounded-0 rounded-bottom m-0">
+      <Link href="/about" className="dropdown-item" onClick={showLoader}>
+        Our Story
+      </Link>
 
-                <Link href="/about" className="dropdown-item" >
-                  About Us
-                </Link>
+      <Link href="/company-documents" className="dropdown-item" onClick={showLoader}>
+        Company Documents
+      </Link>
 
-                <Link href="/certifications" className="dropdown-item" onClick={showLoader}>
-                  Our Certifications
-                </Link>
+      <Link href="/terms-conditions" className="dropdown-item" onClick={showLoader}>
+        Terms & Conditions
+      </Link>
 
-                <Link href="/quote" className="dropdown-item" onClick={showLoader}>
-                  Request Quote
-                </Link>
+      <Link href="/terms-of-use" className="dropdown-item" onClick={showLoader}>
+        Terms Of Use
+      </Link>
 
-                <Link href="#clients" className="dropdown-item" onClick={showLoader}>
-                  Our Clients
-                </Link>
+    </div>
+  </div>
 
-              </div>
+  {/* OUR PRODUCTS (MARKETPLACE) */}
+  <a
+    href="https://bisynconlinestore.odoo.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-item nav-link"
+  >
+    Our Products
+  </a>
 
-            </div>
+  {/* ROUTING */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Routing
+    </a>
+    <div className="dropdown-menu">
 
-            <div className="nav-item dropdown">
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Services
-              </a>
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Accessories
+      </a>
 
-              <div className="dropdown-menu fade-up m-0">
-                <Link href="/services" className="dropdown-item">
-                  All Services
-                </Link>
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Enterprise Routers
+      </a>
 
-                {services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="dropdown-item"
-                    onClick={showLoader}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        SMB Routers
+      </a>
 
-            <Link href="/projects" className="nav-item nav-link" onClick={showLoader}>
-              Projects
-            </Link>
+    </div>
+  </div>
 
+  {/* SECURITY */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Security
+    </a>
+    <div className="dropdown-menu">
 
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Network Security
+      </a>
 
-            <Link href="/contact" className="nav-item nav-link" onClick={showLoader}>
-              Contact
-            </Link>
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Perimeter Security
+      </a>
 
-          </div>
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Service Gateways
+      </a>
+
+    </div>
+  </div>
+
+  {/* SERVERS */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Servers
+    </a>
+    <div className="dropdown-menu">
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Signal Boosters
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Enterprise
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Mobile
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        SMB
+      </a>
+
+    </div>
+  </div>
+
+  {/* SURVEILLANCE */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Surveillance
+    </a>
+    <div className="dropdown-menu">
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Cameras
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Indoor Cameras
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Outdoor Cameras
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Accessories
+      </a>
+
+    </div>
+  </div>
+
+  {/* SOFTWARE & HARDWARE */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Software & Hardware
+    </a>
+    <div className="dropdown-menu">
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Analytics
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        NVR / VMS Servers
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Video Management Software
+      </a>
+
+    </div>
+  </div>
+
+  {/* SWITCHES */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Switches
+    </a>
+    <div className="dropdown-menu">
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Enterprise Switches
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Industrial Switches
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        SMB Switches
+      </a>
+
+    </div>
+  </div>
+
+  {/* WIRELESS */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Wireless
+    </a>
+    <div className="dropdown-menu">
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Indoor WiFi
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Enterprise WiFi
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        SMB WiFi
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Outdoor WiFi
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        Specialised Wireless
+      </a>
+
+      <a className="dropdown-item" href="https://bisynconlinestore.odoo.com/" target="_blank">
+        60 GHz (V-Band)
+      </a>
+
+    </div>
+  </div>
+
+  {/* BRANDS (LINKS TO MARKETPLACE) */}
+  <div className="nav-item dropdown">
+    <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+      Brands
+    </a>
+
+    <div className="dropdown-menu" style={{ maxHeight: "300px", overflowY: "auto" }}>
+
+      {[
+        "Armis","Axis","Cambium Networks","Cudy","Cynet","DuxNet",
+        "Extreme Networks","Hanwha Vision","HPE Aruba","HPE Instant On",
+        "IronLink","MikroTik","Milesight","Milestone","Mitel","NETGEAR",
+        "Nextivity","Northwest Towers","Rajant","Rapid Struct","SAFR",
+        "Tachyon Networks","Teltonika","Versa"
+      ].map((brand) => (
+        <a
+          key={brand}
+          className="dropdown-item"
+          href="https://bisynconlinestore.odoo.com/"
+          target="_blank"
+        >
+          {brand}
+        </a>
+      ))}
+
+    </div>
+  </div>
+
+  {/* EXISTING: PROJECTS + CONTACT */}
+  <Link href="/projects" className="nav-item nav-link" onClick={showLoader}>
+    Projects
+  </Link>
+
+  <Link href="/contact" className="nav-item nav-link" onClick={showLoader}>
+    Contact
+  </Link>
+
+</div>
 
           {/* SOCIAL ICONS */}
           <div className="h-100 d-lg-inline-flex align-items-center d-none">
@@ -179,6 +361,8 @@ export default function Navbar() {
           </div>
 
         </div>
+
+
       </nav>
     </>
   );

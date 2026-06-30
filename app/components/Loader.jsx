@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import NavNetworkbackground from "./NavNetworkbackground";
+
 
 /**
  * Loader.jsx
@@ -44,6 +46,8 @@ export default function Loader({ onFinish, duration = 2200 }) {
       aria-live="polite"
       aria-label="Loading"
     >
+      <NavNetworkbackground />
+
       <div className="bs-loader-tank">
         {/* Logo on top, water rises behind/under it */}
         <img src="/logo.png" alt="BISYNC" className="bs-loader-logo" />
