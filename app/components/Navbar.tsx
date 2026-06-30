@@ -127,7 +127,7 @@ export default function Navbar() {
     rel="noopener noreferrer"
     className="nav-item nav-link"
   >
-    Our Products
+    Products
   </a>
 
   {/* ROUTING */}
