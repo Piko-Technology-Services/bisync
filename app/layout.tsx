@@ -10,6 +10,7 @@ import "./lib/lightbox/css/lightbox.min.css";
 import "./css/bootstrap.min.css";
 import "./css/style.css";
 import Footer from "./components/Footer";
+import { LoaderProvider } from "./components/LoaderProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bisyncnetworks.com"),
@@ -151,9 +152,16 @@ export default function RootLayout({
       </head>
 
       <body>
-        {children}
 
-        <Footer />
+        <LoaderProvider>
+ {children}
+
+  <Footer />
+
+        </LoaderProvider>
+       
+
+       
         {/* <!-- Back to Top --> */}
         <a href="#" className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i className="bi bi-arrow-up"></i></a>
 

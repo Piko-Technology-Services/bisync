@@ -1,16 +1,12 @@
 /********** Template CSS **********/
-/* :root {
-    --primary: #65B530;
-    --secondary: #9B9B9B;
-    --light: #F5F5F5;
-    --dark: #161616;
-} */
-
 :root {
     --primary: #ff8a00;
     --secondary: #ff8a00;
     --light: #F5F5F5;
     --dark: #161616;
+    --bs-orange: #f7941d;
+    --bs-orange-deep: #e07b00;
+    --bs-black: #111111;
 }
 
 .fw-medium {
@@ -114,6 +110,7 @@
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
+    
 }
 
 @media (max-width: 991.98px) {
@@ -152,9 +149,28 @@
 }
 
 
+/*** Header / Hero Carousel ***/
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
+/* BACKGROUND LAYER */
+.network-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
 
-/*** Header ***/
+/* CAROUSEL LAYER */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
 .header-carousel .carousel-inner {
     position: absolute;
     width: 100%;
@@ -166,17 +182,34 @@
     background: rgba(22, 22, 22, .7);
 }
 
+.header-carousel .owl-carousel-item,
+.owl-carousel-item {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.header-carousel .owl-carousel-item img,
+.owl-carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 6s ease-out;
+  transform: scale(1.15);
+}
+
+.header-carousel .owl-carousel-item.active img {
+  transform: scale(1.0);
+}
+
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
-        position: relative;
         min-height: 500px;
     }
-    
+
     .header-carousel .owl-carousel-item img {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .header-carousel .owl-carousel-item h5,
@@ -189,17 +222,6 @@
         font-size: 30px;
         font-weight: 600;
     }
-}
-
-.owl-carousel-item {
-  position: relative;
-  height: 100vh;
-}
-
-.owl-carousel-item img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
 }
 
 .header-carousel .container {
@@ -283,6 +305,16 @@
     border-color: var(--primary);
 }
 
+.header-carousel .owl-dots .owl-dot span {
+  transition: background-color 0.35s ease, transform 0.35s ease, width 0.35s ease;
+}
+.header-carousel .owl-dots .owl-dot.active span {
+  background: var(--bs-orange) !important;
+  transform: scale(1.1);
+  width: 26px !important;
+  border-radius: 6px;
+}
+
 .page-header {
     background: linear-gradient(rgba(22, 22, 22, .7), rgba(22, 22, 22, .7)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
@@ -290,6 +322,195 @@
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
+}
+
+
+/* ============ SLIDE TRANSITIONS ============ */
+@keyframes bsSlideIn {
+  from { opacity: 0; transform: translateX(60px) scale(1.04); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes bsSlideOut {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to   { opacity: 0; transform: translateX(-60px) scale(0.97); }
+}
+
+.bsSlideIn { animation: bsSlideIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.bsSlideOut { animation: bsSlideOut 0.7s ease-in both; }
+
+/* ============ TEXT ENTRANCE — staggered ============ */
+.header-carousel .owl-carousel-item.active .container h1 {
+  position: relative;
+  animation: bsRiseIn 0.9s cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  animation-delay: 0.25s;
+  transition: transform 0.4s ease, text-shadow 0.4s ease, letter-spacing 0.4s ease;
+  cursor: default;
+}
+
+.header-carousel .owl-carousel-item.active .container h1:hover {
+  transform: scale(1.03);
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(247, 148, 29, 0.6);
+}
+
+.header-carousel .owl-carousel-item.active .container h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  background: var(--bs-orange);
+  transform: translateX(-50%);
+  animation: bsUnderline 0.8s ease-out both;
+  animation-delay: 1s;
+}
+
+@keyframes bsUnderline {
+  from { width: 0; }
+  to   { width: 120px; }
+}
+
+.header-carousel .owl-carousel-item.active .container p.fs-5 {
+  animation: bsRiseIn 0.9s cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  animation-delay: 0.45s;
+}
+
+.header-carousel .owl-carousel-item.active .container p:not(.fs-5) {
+  animation: bsRiseIn 0.9s cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  animation-delay: 0.6s;
+}
+
+.header-carousel .owl-carousel-item.active .container p {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.header-carousel .owl-carousel-item.active .container p:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.header-carousel .owl-carousel-item.active .container .d-flex {
+  animation: bsRiseIn 0.9s cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  animation-delay: 0.8s;
+}
+
+@keyframes bsRiseIn {
+  from { opacity: 0; transform: translateY(35px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/* ============ WATER-FILL HOVER BUTTONS ============ */
+.bs-water-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 0;
+  transition: color 0.4s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bs-water-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+}
+
+.bs-water-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.bs-water-btn span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.bs-water-btn:hover span {
+  transform: scale(1.05);
+}
+
+.bs-water-btn::before {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: 0;
+  width: 110%;
+  height: 0%;
+  background: var(--bs-orange-deep);
+  border-radius: 45% 45% 0 0 / 12% 12% 0 0;
+  transition: height 0.5s cubic-bezier(0.45, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.bs-water-btn::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: 0;
+  width: 110%;
+  height: 0%;
+  background: var(--bs-orange);
+  border-radius: 40% 40% 0 0 / 16% 16% 0 0;
+  transition: height 0.6s cubic-bezier(0.45, 0, 0.2, 1) 0.08s;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.bs-water-btn:hover::before {
+  height: 110%;
+}
+.bs-water-btn:hover::after {
+  height: 95%;
+}
+
+.btn-primary.bs-water-btn::before {
+  background: #111111;
+}
+.btn-primary.bs-water-btn::after {
+  background: var(--bs-orange-deep);
+}
+
+.bs-water-btn-outline {
+  border-color: #fff;
+}
+.bs-water-btn-outline:hover {
+  border-color: var(--bs-orange);
+}
+
+.bs-water-btn-light:hover {
+  color: #111 !important;
+}
+.bs-water-btn-light::before,
+.bs-water-btn-light::after {
+  background: var(--bs-orange);
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bsSlideIn,
+  .bsSlideOut,
+  .header-carousel .owl-carousel-item img,
+  .header-carousel .owl-carousel-item.active .container h1,
+  .header-carousel .owl-carousel-item.active .container p,
+  .header-carousel .owl-carousel-item.active .container .d-flex,
+  .header-carousel .owl-carousel-item.active .container h1::after,
+  .bs-water-btn::before,
+  .bs-water-btn::after,
+  .bs-water-btn:hover {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .header-carousel .owl-carousel-item.active .container h1:hover,
+  .header-carousel .owl-carousel-item.active .container p:hover {
+    transform: none !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+  }
 }
 
 
@@ -343,6 +564,14 @@
     width: 140px;
 }
 
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
 
 /*** Feature ***/
 @media (min-width: 992px) {
@@ -388,6 +617,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+    transition: all 0.3s ease;
 }
 
 .portfolio-inner img {
@@ -410,6 +640,14 @@
 .portfolio-inner:hover .portfolio-text {
     bottom: 0;
     opacity: 1;
+}
+
+.hover-overlay {
+  transition: all 0.3s ease;
+}
+
+.portfolio-inner:hover .hover-overlay {
+  opacity: 1;
 }
 
 
@@ -596,406 +834,171 @@
 }
 
 
-
-
-.hero-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+/*** Loader ***/
+.bs-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: #ffffff;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* BACKGROUND LAYER */
-.network-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.bs-loader-hide {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
-/* CAROUSEL LAYER */
-.hero-content {
+.bs-loader-tank {
   position: relative;
+  width: 220px;
+  height: 140px;
+  border: 3px solid var(--bs-black);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fafafa;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.bs-loader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  height: auto;
   z-index: 2;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  user-select: none;
+  pointer-events: none;
 }
 
-/* SLIDES */
-.owl-carousel-item {
-  height: 100vh;
-  position: relative;
+.bs-loader-water {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0%;
+  z-index: 1;
+  animation: bs-fill 2.2s cubic-bezier(0.45, 0, 0.55, 1) forwards;
 }
 
-.owl-carousel-item img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+.bs-loader-wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 60px;
+  top: -28px;
 }
 
-
-.portfolio-inner {
-  transition: all 0.3s ease;
+.bs-loader-wave path {
+  fill: var(--bs-orange);
 }
 
-.portfolio-inner:hover .hover-overlay {
-  opacity: 1;
+.bs-loader-wave-front path {
+  fill: var(--bs-orange-deep);
 }
 
-.hover-overlay {
-  transition: all 0.3s ease;
-
-
+.bs-loader-wave-back {
+  animation: bs-wave-move 3.2s linear infinite;
+  opacity: 0.85;
 }
 
-.service-card {
-  transition: all 0.3s ease;
+.bs-loader-wave-front {
+  animation: bs-wave-move 2.1s linear infinite reverse;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
+.bs-loader-water::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  bottom: 0;
+  background: var(--bs-orange);
 }
 
+@keyframes bs-fill {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
 
-        :global(:root) {
-          --bs-orange: #f7941d;
-          --bs-orange-deep: #e07b00;
-          --bs-black: #111111;
-        }
+@keyframes bs-wave-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-        .bs-loader-overlay {
-          position: fixed;
-          inset: 0;
-          z-index: 9999;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 22px;
-          background: #ffffff;
-          transition: opacity 0.5s ease, visibility 0.5s ease;
-          opacity: 1;
-          visibility: visible;
-        }
+.bs-loader-label {
+  display: flex;
+  gap: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
 
-        .bs-loader-hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
+.bs-loader-label span {
+  color: var(--bs-black);
+  animation: bs-letter-pulse 1.4s ease-in-out infinite;
+}
 
-        /* The rectangle "tank" that holds the logo */
-        .bs-loader-tank {
-          position: relative;
-          width: 220px;
-          height: 140px;
-          border: 3px solid var(--bs-black);
-          border-radius: 14px;
-          overflow: hidden;
-          background: #fafafa;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-        }
+.bs-loader-label span:nth-child(1) {
+  color: var(--bs-black);
+}
+.bs-loader-label span:not(:first-child) {
+  color: var(--bs-orange);
+}
 
-        .bs-loader-logo {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 78%;
-          height: auto;
-          z-index: 2;
-          filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
-          user-select: none;
-          pointer-events: none;
-        }
+.bs-loader-label span:nth-child(1) { animation-delay: 0s; }
+.bs-loader-label span:nth-child(2) { animation-delay: 0.1s; }
+.bs-loader-label span:nth-child(3) { animation-delay: 0.2s; }
+.bs-loader-label span:nth-child(4) { animation-delay: 0.3s; }
+.bs-loader-label span:nth-child(5) { animation-delay: 0.4s; }
+.bs-loader-label span:nth-child(6) { animation-delay: 0.5s; }
 
-        /* Water container: animates its height from 0 -> 100% */
-        .bs-loader-water {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 0%;
-          z-index: 1;
-          animation: bs-fill 2.2s cubic-bezier(0.45, 0, 0.55, 1) forwards;
-        }
+@keyframes bs-letter-pulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
 
-        .bs-loader-wave {
-          position: absolute;
-          left: 0;
-          width: 200%;
-          height: 60px;
-          top: -28px;
-        }
+@media (max-width: 480px) {
+  .bs-loader-tank {
+    width: 170px;
+    height: 110px;
+  }
+  .bs-loader-label {
+    font-size: 1.1rem;
+  }
+}
 
-        .bs-loader-wave path {
-          fill: var(--bs-orange);
-        }
-
-        .bs-loader-wave-front path {
-          fill: var(--bs-orange-deep);
-        }
-
-        .bs-loader-wave-back {
-          animation: bs-wave-move 3.2s linear infinite;
-          opacity: 0.85;
-        }
-
-        .bs-loader-wave-front {
-          animation: bs-wave-move 2.1s linear infinite reverse;
-        }
-
-        /* fills the rest of the tank below the waves */
-        .bs-loader-water::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 20px;
-          bottom: 0;
-          background: var(--bs-orange);
-        }
-
-        @keyframes bs-fill {
-          0% {
-            height: 0%;
-          }
-          100% {
-            height: 100%;
-          }
-        }
-
-        @keyframes bs-wave-move {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        /* Brand letters pulsing under the tank */
-        .bs-loader-label {
-          display: flex;
-          gap: 4px;
-          font-family: Georgia, "Times New Roman", serif;
-          font-weight: 700;
-          font-size: 1.4rem;
-          letter-spacing: 2px;
-        }
-
-        .bs-loader-label span {
-          color: var(--bs-black);
-          animation: bs-letter-pulse 1.4s ease-in-out infinite;
-        }
-
-        .bs-loader-label span:nth-child(1) {
-          color: var(--bs-black);
-        }
-        .bs-loader-label span:not(:first-child) {
-          color: var(--bs-orange);
-        }
-
-        .bs-loader-label span:nth-child(1) { animation-delay: 0s; }
-        .bs-loader-label span:nth-child(2) { animation-delay: 0.1s; }
-        .bs-loader-label span:nth-child(3) { animation-delay: 0.2s; }
-        .bs-loader-label span:nth-child(4) { animation-delay: 0.3s; }
-        .bs-loader-label span:nth-child(5) { animation-delay: 0.4s; }
-        .bs-loader-label span:nth-child(6) { animation-delay: 0.5s; }
-
-        @keyframes bs-letter-pulse {
-          0%, 100% {
-            transform: translateY(0);
-            opacity: 0.55;
-          }
-          50% {
-            transform: translateY(-4px);
-            opacity: 1;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .bs-loader-tank {
-            width: 170px;
-            height: 110px;
-          }
-          .bs-loader-label {
-            font-size: 1.1rem;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .bs-loader-wave-back,
-          .bs-loader-wave-front,
-          .bs-loader-label span {
-            animation: none;
-          }
-          .bs-loader-water {
-            animation-duration: 0.6s;
-          }
-        }
-
-
-
-
-        
-        :root {
-          --bs-orange: #f7941d;
-          --bs-orange-deep: #e07b00;
-        }
-
-        /* ============ CAROUSEL SLIDE TRANSITIONS ============ */
-        /* Owl Carousel toggles these classes on the outgoing/incoming
-           .owl-carousel-item during a transition because of
-           animateOut / animateIn above. */
-
-        .header-carousel .owl-carousel-item {
-          backface-visibility: hidden;
-        }
-
-        @keyframes bsFadeZoomIn {
-          from {
-            opacity: 0;
-            transform: scale(1.08);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes bsFadeZoomOut {
-          from {
-            opacity: 1;
-            transform: scale(1);
-          }
-          to {
-            opacity: 0;
-            transform: scale(0.96);
-          }
-        }
-
-        .bsFadeZoomIn {
-          animation: bsFadeZoomIn 1s ease both;
-        }
-        .bsFadeZoomOut {
-          animation: bsFadeZoomOut 1s ease both;
-        }
-
-        /* subtle continuous drift on the hero text so each slide feels alive
-           while it's showing, not just during the swap */
-        .header-carousel .owl-carousel-item.active .container h1,
-        .header-carousel .owl-carousel-item.active .container p {
-          animation: bsRiseIn 0.9s ease both;
-        }
-        .header-carousel .owl-carousel-item.active .container p:nth-of-type(2) {
-          animation-delay: 0.15s;
-        }
-        .header-carousel .owl-carousel-item.active .container .d-flex {
-          animation: bsRiseIn 0.9s ease both;
-          animation-delay: 0.3s;
-        }
-        @keyframes bsRiseIn {
-          from { opacity: 0; transform: translateY(18px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Owl dots: make the active dot feel more alive */
-        .header-carousel .owl-dots .owl-dot span {
-          transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .header-carousel .owl-dots .owl-dot.active span {
-          background: var(--bs-orange) !important;
-          transform: scale(1.3);
-        }
-
-        /* ============ WATER-FILL HOVER BUTTONS ============ */
-        .bs-water-btn {
-          position: relative;
-          overflow: hidden;
-          isolation: isolate;
-          z-index: 0;
-          transition: color 0.4s ease, border-color 0.3s ease;
-        }
-
-        .bs-water-btn span {
-          position: relative;
-          z-index: 2;
-        }
-
-        /* the rising liquid layer */
-        .bs-water-btn::before {
-          content: "";
-          position: absolute;
-          left: -5%;
-          bottom: 0;
-          width: 110%;
-          height: 0%;
-          background: var(--bs-orange-deep);
-          border-radius: 45% 45% 0 0 / 12% 12% 0 0;
-          transition: height 0.5s cubic-bezier(0.45, 0, 0.2, 1);
-          z-index: 1;
-        }
-
-        /* a second wave layer, slightly offset, for a ripple feel */
-        .bs-water-btn::after {
-          content: "";
-          position: absolute;
-          left: -5%;
-          bottom: 0;
-          width: 110%;
-          height: 0%;
-          background: var(--bs-orange);
-          border-radius: 40% 40% 0 0 / 16% 16% 0 0;
-          transition: height 0.6s cubic-bezier(0.45, 0, 0.2, 1) 0.05s;
-          z-index: 1;
-          opacity: 0.85;
-        }
-
-        .bs-water-btn:hover::before {
-          height: 110%;
-        }
-        .bs-water-btn:hover::after {
-          height: 95%;
-        }
-
-        .bs-water-btn:hover {
-          color: #ffffff !important;
-        }
-
-        /* primary (already orange) button: water rises in deep orange/black tint */
-        .btn-primary.bs-water-btn::before {
-          background: #111111;
-        }
-        .btn-primary.bs-water-btn::after {
-          background: var(--bs-orange-deep);
-        }
-
-        /* outline-light variant on the hero (white outline, transparent bg) */
-        .bs-water-btn-outline {
-          border-color: #fff;
-        }
-        .bs-water-btn-outline:hover {
-          border-color: var(--bs-orange);
-        }
-
-        /* light button variant */
-        .bs-water-btn-light:hover {
-          color: #111 !important;
-        }
-        .bs-water-btn-light::before,
-        .bs-water-btn-light::after {
-          background: var(--bs-orange);
-          opacity: 0.9;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .bsFadeZoomIn,
-          .bsFadeZoomOut,
-          .header-carousel .owl-carousel-item.active .container h1,
-          .header-carousel .owl-carousel-item.active .container p,
-          .header-carousel .owl-carousel-item.active .container .d-flex,
-          .bs-water-btn::before,
-          .bs-water-btn::after {
-            animation: none !important;
-            transition: none !important;
-          }
-        }
+@media (prefers-reduced-motion: reduce) {
+  .bs-loader-wave-back,
+  .bs-loader-wave-front,
+  .bs-loader-label span {
+    animation: none;
+  }
+  .bs-loader-water {
+    animation-duration: 0.6s;
+  }
+}

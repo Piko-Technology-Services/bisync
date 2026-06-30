@@ -31,11 +31,11 @@ export default function Home() {
           items: 1,
           loop: true,
           autoplay: true,
-          autoplayTimeout: 3000,       // move to next slide every 2s
+          autoplayTimeout: 5000,       // move to next slide every 5s
           autoplayHoverPause: true,
-          smartSpeed: 1000,            // speed of the transition itself
-          animateOut: "bsFadeZoomOut", // custom exit animation
-          animateIn: "bsFadeZoomIn",   // custom enter animation
+          smartSpeed: 1200,            // speed of the transition itself
+          animateOut: "bsSlideOut",    // custom exit animation
+          animateIn: "bsSlideIn",      // custom enter animation
           dots: true,
           nav: false,
         });
