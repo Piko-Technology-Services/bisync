@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import NetworkBackground from "./components/NetworkBackground";
 import AboutSection from "./sections/AboutSection";
@@ -11,9 +11,13 @@ import ProjectsSection from "./sections/ProjectsSection";
 import QuoteSection from "./sections/QuoteSection";
 import TestimonialSection from "./sections/TestimonialSection";
 import ClientsSection from "./sections/ClientsSection";
+import Loader from "./components/Loader";
 
 
 export default function Home() {
+
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const initCarousel = () => {
       const $ = window.jQuery;
@@ -44,6 +48,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+
   return (
     <>
 
@@ -55,6 +60,7 @@ export default function Home() {
       </div> */}
       {/* <!-- Spinner End --> */}
 
+ {loading && <Loader onFinish={() => setLoading(false)} />}
 
       <Navbar />
 
