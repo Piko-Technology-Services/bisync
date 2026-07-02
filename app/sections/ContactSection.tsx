@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 
 export default function ContactPage() {
   const contactInfo = [
@@ -33,7 +33,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="contact-section">
         <div className="container py-6">

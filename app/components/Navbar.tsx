@@ -122,7 +122,7 @@ export default function Navbar() {
 
   {/* OUR PRODUCTS (MARKETPLACE) */}
   <a
-    href="https://bisynconlinestore.odoo.com/"
+    href="/products"
     target="_blank"
     rel="noopener noreferrer"
     className="nav-item nav-link"
@@ -175,7 +175,7 @@ export default function Navbar() {
   </div>
 
   {/* SERVERS */}
-  <div className="nav-item dropdown">
+  {/* <div className="nav-item dropdown">
     <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
       Servers
     </a>
@@ -198,7 +198,7 @@ export default function Navbar() {
       </a>
 
     </div>
-  </div>
+  </div> */}
 
   {/* SURVEILLANCE */}
   <div className="nav-item dropdown">
@@ -227,7 +227,7 @@ export default function Navbar() {
   </div>
 
   {/* SOFTWARE & HARDWARE */}
-  <div className="nav-item dropdown">
+  {/* <div className="nav-item dropdown">
     <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
       Software & Hardware
     </a>
@@ -246,10 +246,10 @@ export default function Navbar() {
       </a>
 
     </div>
-  </div>
+  </div> */}
 
   {/* SWITCHES */}
-  <div className="nav-item dropdown">
+  {/* <div className="nav-item dropdown">
     <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
       Switches
     </a>
@@ -268,7 +268,7 @@ export default function Navbar() {
       </a>
 
     </div>
-  </div>
+  </div> */}
 
   {/* WIRELESS */}
   <div className="nav-item dropdown">

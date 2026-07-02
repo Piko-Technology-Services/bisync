@@ -12,6 +12,7 @@ import QuoteSection from "./sections/QuoteSection";
 import TestimonialSection from "./sections/TestimonialSection";
 import ClientsSection from "./sections/ClientsSection";
 import Loader from "./components/Loader";
+import ContactSection from "./sections/ContactSection";
 
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
 
     {/* SLIDE 1 - HERO INTRO (UNCHANGED) */}
     <div className="owl-carousel-item">
-      <img src="/images/cabling1.jfif" alt="slide 1" />
+      <img src="/img/hero 3.jpg" alt="slide 1" />
 
       <NetworkBackground />
 
@@ -103,11 +104,13 @@ export default function Home() {
               <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
                 <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
-                <span>Explore Our Services</span>
+              <a href="https://bisynconlinestore.odoo.com/" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+            <i className="fa fa-store me-2"></i>
+                
+                <span>Explore Our Online Store</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
-                <span>About Us</span>
+              <a href="/products" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>Our Products</span>
               </a>
             </div>
 
@@ -117,7 +120,7 @@ export default function Home() {
     </div>
 
      <div className="owl-carousel-item">
-      <img src="/images/network.jpg" alt="slide 2" />
+      <img src="/img/hero 4.jpg" alt="slide 2" />
 
       <NetworkBackground />
 
@@ -142,11 +145,13 @@ export default function Home() {
               <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
                 <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
-                <span>Explore Our Services</span>
+              <a href="https://bisynconlinestore.odoo.com/" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+            <i className="fa fa-store me-2"></i>
+                
+                <span>Explore Our Online Store</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
-                <span>About Us</span>
+              <a href="/products" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>Our Products</span>
               </a>
             </div>
 
@@ -156,7 +161,7 @@ export default function Home() {
     </div>
 
     <div className="owl-carousel-item">
-      <img src="/img/carousel-3.jpg" alt="slide 3" />
+      <img src="/img/hero 2.jpg" alt="slide 3" />
 
       <NetworkBackground />
 
@@ -181,11 +186,13 @@ export default function Home() {
               <a href="#quote" className="btn btn-primary px-4 py-2 bs-water-btn">
                 <span>Request a Quote</span>
               </a>
-              <a href="#services" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
-                <span>Explore Our Services</span>
+              <a href="https://bisynconlinestore.odoo.com/" className="btn btn-outline-light px-4 py-2 bs-water-btn bs-water-btn-outline">
+            <i className="fa fa-store me-2"></i>
+                
+                <span>Explore Our Online Store</span>
               </a>
-              <a href="#about" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
-                <span>About Us</span>
+              <a href="/products" className="btn btn-light px-4 py-2 bs-water-btn bs-water-btn-light">
+                <span>Our Products</span>
               </a>
             </div>
 
@@ -201,17 +208,17 @@ export default function Home() {
 </div>
       </div>
 
-
-
       <FactsSection />
       <AboutSection />
       <ServicesSection />
       <FeatureSection />
       {/* <ProjectsSection /> */}
-      <QuoteSection />
-      {/* <TestimonialSection /> */}
       <ClientsSection />
 
+      <QuoteSection />
+
+      <ContactSection />
+      {/* <TestimonialSection /> */}
 
     </>
   );
